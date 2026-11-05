@@ -215,6 +215,10 @@ lo que haremos sera ejecutar este comando en mongos para revisar cómo se distri
 ````
 db.movies.getShardDistribution();
 ````
+<img width="958" height="688" alt="imagen" src="https://github.com/user-attachments/assets/11c2b7ae-30d2-4f2c-80e4-7a1de6bef982" />
+
+despues de horas y horas toda la noche en busca de que problema hay, no pudimos dividir en partes iguales, incluso creamos los chunks de manera forzosa porque el balanceador automatico simplemente asignaba el 100% de los datos al shard3
+
 A. Inserción (Create)
 
 Insertamos nuevos documentos de prueba para observar cómo el algoritmo hashed distribuye las nuevas inserciones entre los shards:
