@@ -1,10 +1,11 @@
+version: '3.8'
 
 networks:
   mongo-cluster-net:
     driver: bridge
 
 services:
-  # --- Config Server Replica Set ---
+  # --- Config Server ---
   configsvr01:
     image: mongo:6.0
     container_name: configsvr01
@@ -16,7 +17,7 @@ services:
     volumes:
       - configsvr01_data:/data/db
 
-  # --- Shard 1 Replica Set ---
+  # --- Shard 1 ---
   shard1node1:
     image: mongo:6.0
     container_name: shard1node1
@@ -28,7 +29,7 @@ services:
     volumes:
       - shard1node1_data:/data/db
 
-  # --- Shard 2 Replica Set ---
+  # --- Shard 2 ---
   shard2node1:
     image: mongo:6.0
     container_name: shard2node1
@@ -40,7 +41,7 @@ services:
     volumes:
       - shard2node1_data:/data/db
 
-  # --- Shard 3 Replica Set ---
+  # --- Shard 3 ---
   shard3node1:
     image: mongo:6.0
     container_name: shard3node1

@@ -1,0 +1,1 @@
+db = db.getSiblingDB("sample_mflix"); db.movies.find({ id_movie: { $exists: false } }).forEach(function(doc) { db.movies.updateOne({ _id: doc._id }, { $set: { id_movie: doc._id.valueOf() } }); }); print("Actualizacion completada."); 
